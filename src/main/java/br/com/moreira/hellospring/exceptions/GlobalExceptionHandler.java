@@ -17,7 +17,7 @@ public class GlobalExceptionHandler {
   @ExceptionHandler(ProdutoNotFountException.class)
   public ResponseEntity<ErrorResponseDTO> handleProdutoNotFoundException(ProdutoNotFountException e) {
     return ResponseEntity
-        .status(HttpStatus.CONFLICT)
+        .status(HttpStatus.NOT_FOUND)
         .body(new ErrorResponseDTO(e.getMessage()));
   }
 
